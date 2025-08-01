@@ -1,0 +1,220 @@
+.main{
+    width: 100vw;
+    background-color: rgb(255, 149, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 65px;
+}
+
+.main h1{
+    margin-top: 50px;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 48px;
+}
+
+.main ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.main ul li{
+    list-style: none;
+}
+
+.productList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 1250px;
+    height: 850px;
+    margin-bottom: 100px;
+    gap: 20px;
+}
+
+.addProductBg{
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.addProductForm{
+    width: 1000px;
+    height: 500px;
+    border: 2px solid orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.addProductForm input, select{
+    background-color: rgb(255, 171, 98);
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.addProductBg button{
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(255, 119, 0);
+    color: white;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.addProductBg button:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+
+.addProductForm .inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.addProductForm label{
+    text-align: center;
+}
+
+.addProductForm .generalInfo{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+}
+
+.addProductForm .generalInfo input{
+    margin-bottom: 20px;
+}
+
+.addProductForm .productDescription{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+}
+
+.addProductForm .productDescription input{
+    width: 400px;
+    height: 200px;
+}
+
+.addProductForm .productDescription label{
+    margin-bottom: 25px;
+}
+
+.addProductForm .imageInput{
+    height: 250px;
+}
+
+.imageInput .imageThumbnail{
+    width: 250px;
+    height: 100px;
+    border: 2px solid orange;
+}
+
+.productCard{
+    width: 200px;
+    height: 300px;
+    background-color: rgba(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -7.5px;
+    box-shadow: 0px 0px 3.5px black;
+}
+
+.productCard img{
+    height: 175px;
+    width: 175px;
+    object-fit: cover;
+}
+
+.productCard ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.productCard ul button{
+    width: 75px;
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(255, 149, 43);
+    cursor: pointer;
+}
+
+.productCardList{
+    display: flex;
+    justify-content: center;
+    width: 1210px;
+    height: 640px;
+    padding: 20px;
+}
+
+.upperButton{
+    background-color: rgb(255, 119, 0);
+    border: none;
+    border-radius: 50px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.upperSelect{
+    background-color: rgb(255, 119, 0);
+    border: none;
+    border-radius: 50px;
+    width: 175px;
+    padding-left: 5px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.searchBar{
+    border: none;
+    border-radius: 50px;
+    width: 150px;
+    height: 40px;
+    color: black;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+.cartSpan{
+    background-color: rgb(0, 167, 0);
+    padding: 2px 7.5px 2px 7.5px;
+    border-radius: 50px;
+}

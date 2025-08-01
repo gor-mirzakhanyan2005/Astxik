@@ -1,0 +1,57 @@
+.detailBackground{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.detailContainer{
+    width: 75vw;
+    height: 75vh;
+    box-shadow: 0px 0px 5px 2px rgb(137, 137, 137);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.detailContainer .basicInfo{
+    display: flex;
+    flex-direction: column;
+    width: 250%;
+    align-items: center;
+    gap: 20px;
+}
+
+.detailContainer .buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: center;
+}
+
+.detailContainer .descAndAdd{
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+}
+
+.detailContainer p{
+    font-size: 24px;
+}
+
+.detailContainer img{
+    width: 75%;
+}
+
+.detailContainer button{
+    height: 40px;
+    width: 140px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(255, 132, 0);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
