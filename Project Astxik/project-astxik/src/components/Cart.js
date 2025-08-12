@@ -3,9 +3,9 @@ import styles from "../stylesheets/Cart.module.css";
 import { useEffect } from 'react';
 import { CartContext } from './Home';
 
-const Cart = ({cartOpen, setCartOpen, setCart, removeItem}) => {
+const Cart = ({cartOpen, setCartOpen}) => {
 
-  const cart = useContext(CartContext);
+  const {cart, setCart} = useContext(CartContext);
 
   return (
     <div className={styles.shoppingCart}>

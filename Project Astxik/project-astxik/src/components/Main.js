@@ -5,6 +5,7 @@ import { supabase } from '../supabase-client';
 import { useAuth } from '../contexts/AuthContext';
 import { useQuery } from '@tanstack/react-query';
 import { SlBasket } from "react-icons/sl";
+import { useNavigate } from 'react-router-dom';
 import Pages from './Pages';
 import { CartContext } from './Home';
 import { Link } from 'react-router-dom';
@@ -19,7 +20,8 @@ const Main = ({addOpen,
   setCartOpen}) => {
 
   const {cart, setCart} = useContext(CartContext)
-
+  const {user} = useAuth();
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [posts, setPosts] = useState(10);
   const [query, setQuery] = useState("");
@@ -69,6 +71,7 @@ const Main = ({addOpen,
   const displayItems = queryItems(query, categorizedItems);
 
   console.log(productQuery.data);
+  console.log(user.uid);
 
   return (
     <div>
@@ -99,15 +102,14 @@ const Main = ({addOpen,
               <ul className={styles.productCardList}>
                 {
                   displayItems.map((product) => (
-                  <li key={product.id} className={styles.productCard}>
+                  <li key={product.id} className={styles.productCard} onClick={() => {navigate(`/product/${product.id}`)}}>
                     <img src={product.productImage} />
                     <p>{product.productName}</p>
                     <ul>
                       <p>{product.productPrice}</p>
-                      <button onClick={() =>{
+                        <button onClick={() =>{
                         setCart([...cart, product]);
-                      }}><SlBasket color="white" fontSize="20px"/></button>
-                      <Link to={`/product/${product.id}`}>View</Link>
+                        }}><SlBasket color="white" fontSize="20px"/></button>
                     </ul>
                   </li> ))
                   }

@@ -1,6 +1,6 @@
 .main{
     width: 100vw;
-    background-color: rgb(255, 149, 43);
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,9 +10,9 @@
 
 .main h1{
     margin-top: 50px;
-    color: white;
+    color: rgb(0, 0, 0);
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
     font-size: 48px;
 }
 
@@ -34,7 +34,6 @@
     background-color: white;
     width: 1250px;
     height: 850px;
-    margin-bottom: 100px;
     gap: 20px;
 }
 
@@ -146,6 +145,10 @@
     box-shadow: 0px 0px 3.5px black;
 }
 
+.productCard:hover{
+    transform: scale(105%);
+}
+
 .productCard img{
     height: 175px;
     width: 175px;
@@ -186,6 +189,7 @@
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
+    border: 2px solid black;
 }
 
 .upperSelect{
@@ -199,6 +203,7 @@
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
+    border: 2px solid black;
 }
 
 .searchBar{
