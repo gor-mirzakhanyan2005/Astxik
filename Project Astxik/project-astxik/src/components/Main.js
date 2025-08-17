@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { SlBasket } from "react-icons/sl";
 import { useNavigate } from 'react-router-dom';
 import Pages from './Pages';
-import { CartContext } from './Home';
+import { CartContext } from '../App';
 import { Link } from 'react-router-dom';
 
 

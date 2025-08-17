@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styles from "../stylesheets/Cart.module.css";
 import { useEffect } from 'react';
-import { CartContext } from './Home';
+import { CartContext } from '../App';
 
 const Cart = ({cartOpen, setCartOpen}) => {
 

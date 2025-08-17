@@ -1,9 +1,11 @@
 .detailBackground{
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 50px;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
+    z-index: 1;
 }
 
 .detailContainer{

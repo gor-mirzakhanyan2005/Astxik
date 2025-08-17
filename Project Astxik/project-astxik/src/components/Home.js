@@ -8,17 +8,17 @@ import Main from "./Main";
 import ProfileMenu from './ProfileMenu';
 import AddProduct from './AddProduct';
 import Cart from './Cart';
-import { createContext } from 'react';
+import { CartContext } from '../App';
 import About from './About';
+import { useContext } from 'react';
 import Footer from './Footer';
 import { supabase } from '../supabase-client';
 import ProductDetails from './ProductDetails';
 
-export const CartContext = createContext([]);
-
 function Home() {
   const navigate = useNavigate();
   const {user, loading} = useAuth();
+  const {cart, setCart} = useContext(CartContext);
   const [profileOpen, setProfileOpen] = useState(false);
   const [addOpen, setAddOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
@@ -26,7 +26,6 @@ function Home() {
   const [filterCategory, setFilterCategory] = useState("All");
   const [about, setAbout] = useState(false);
   const [productDetails, setProductDetails] = useState(false);
-  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     if(!user && !loading){
@@ -129,30 +128,24 @@ function Home() {
 
   return (
     <div>
-      <CartContext.Provider value={{cart, setCart}}>
-        {productDetails && <ProductDetails cart={cart} setCart={setCart}
-          productDetails={productDetails} setProductDetails={setProductDetails}/>}
-        {cartOpen && <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} cart={cart} setCart={setCart}/>}
-        {profileOpen && <ProfileMenu profileOpen={profileOpen} setProfileOpen={setProfileOpen} />}
-        {addOpen && <AddProduct
-          category={category}
-          setCategory={setCategory}
-          categories={categories}
-          addOpen={addOpen}
-          setAddOpen={setAddOpen} />}
         {user ?
           <>
-            {!cartOpen && !profileOpen && !addOpen &&
               <Nav profileOpen={profileOpen}
                 setProfileOpen={setProfileOpen}
                 about={about}
                 setAbout={setAbout}
               />
-            }
+          {cartOpen && <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} cart={cart} setCart={setCart}/>}
+          {profileOpen && <ProfileMenu profileOpen={profileOpen} setProfileOpen={setProfileOpen} />}
+          {addOpen && <AddProduct
+          category={category}
+          setCategory={setCategory}
+          categories={categories}
+          addOpen={addOpen}
+          setAddOpen={setAddOpen} />}
+          {about && <About />}
 
-            {about && <About />}
-
-            {!cartOpen && !profileOpen && !addOpen && !about && !productDetails &&
+            {!cartOpen && !profileOpen && !addOpen && !about &&
             <>
               <Main
                 filterCategory={filterCategory}
@@ -180,7 +173,6 @@ function Home() {
               <div>Loading...</div>
             </>
           }
-        </CartContext.Provider>
       </div>
   )
 }
